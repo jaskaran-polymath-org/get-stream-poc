@@ -1,0 +1,44 @@
+{
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --sourcemap --platform=node --outfile=build/index.js --external:graphql/*",
+    "start": "npm run build && node -r dotenv/config build",
+    "dev": "nodemon --watch src/ --ext ts,json --exec \"npm start\"",
+    "lint": "prettier --write src/**/* && eslint . --ext .ts --fix"
+  },
+  "dependencies": {
+    "@sentry/node": "^7.7.0",
+    "@sentry/tracing": "^7.7.0",
+    "cors": "^2.8.5",
+    "dd-trace": "^3.14.1",
+    "dotenv": "^16.0.1",
+    "esbuild": "^0.14.49",
+    "express": "^4.18.1",
+    "helmet": "^5.1.0",
+    "http-status-codes": "^2.2.0",
+    "morgan": "^1.10.0",
+    "stream-chat": "^8.39.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.5.0",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.45",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-typescript": "^16.1.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-sonarjs": "^0.14.0",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.2",
+    "ts-migrate-mongoose": "^3.1.6",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.6.2"
+  }
+}
